@@ -463,7 +463,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    4 分
                 </div>
                 
 
@@ -498,18 +498,18 @@
 -e 环境配置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="列出所有的容器"><a href="#列出所有的容器" class="headerlink" title="列出所有的容器"></a>列出所有的容器</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker ps命令
-# 列出正在运行的容器
--a # 列出所有的容器
--n&#x3D;? # 显示最近创建的容器
--q # 只显示容器ID
-[root@localhost ~]# docker ps
+<span class="token comment"># 列出正在运行的容器</span>
+-a <span class="token comment"># 列出所有的容器</span>
+-n<span class="token operator">=</span>? <span class="token comment"># 显示最近创建的容器</span>
+-q <span class="token comment"># 只显示容器ID</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker ps</span>
 CONTAINER ID   IMAGE                    COMMAND                  CREATED        STATUS        PORTS                                                                                      NAMES
-11025ffd4e80   redis:5.0.9-alpine3.11   &quot;docker-entrypoint.s…&quot;   11 hours ago   Up 11 hours   0.0.0.0:6376-&gt;6379&#x2F;tcp, :::6376-&gt;6379&#x2F;tcp, 0.0.0.0:16376-&gt;16379&#x2F;tcp, :::16376-&gt;16379&#x2F;tcp   redis-6
-31b5ce0cd98c   redis:5.0.9-alpine3.11   &quot;docker-entrypoint.s…&quot;   11 hours ago   Up 11 hours   0.0.0.0:6375-&gt;6379&#x2F;tcp, :::6375-&gt;6379&#x2F;tcp, 0.0.0.0:16375-&gt;16379&#x2F;tcp, :::16375-&gt;16379&#x2F;tcp   redis-5
-ccc05f2ab8bc   redis:5.0.9-alpine3.11   &quot;docker-entrypoint.s…&quot;   11 hours ago   Up 11 hours   0.0.0.0:6374-&gt;6379&#x2F;tcp, :::6374-&gt;6379&#x2F;tcp, 0.0.0.0:16374-&gt;16379&#x2F;tcp, :::16374-&gt;16379&#x2F;tcp   redis-4
-20e40bf0dc2b   redis:5.0.9-alpine3.11   &quot;docker-entrypoint.s…&quot;   11 hours ago   Up 11 hours   0.0.0.0:6373-&gt;6379&#x2F;tcp, :::6373-&gt;6379&#x2F;tcp, 0.0.0.0:16373-&gt;16379&#x2F;tcp, :::16373-&gt;16379&#x2F;tcp   redis-3
-f32e7a237dc7   redis:5.0.9-alpine3.11   &quot;docker-entrypoint.s…&quot;   11 hours ago   Up 11 hours   0.0.0.0:6372-&gt;6379&#x2F;tcp, :::6372-&gt;6379&#x2F;tcp, 0.0.0.0:16372-&gt;16379&#x2F;tcp, :::16372-&gt;16379&#x2F;tcp   redis-2
-9b52db0451d1   redis:5.0.9-alpine3.11   &quot;docker-entrypoint.s…&quot;   11 hours ago   Up 11 hours   0.0.0.0:6371-&gt;6379&#x2F;tcp, :::6371-&gt;6379&#x2F;tcp, 0.0.0.0:16371-&gt;16379&#x2F;tcp, :::16371-&gt;16379&#x2F;tcp   redis-1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+11025ffd4e80   redis:5.0.9-alpine3.11   <span class="token string">"docker-entrypoint.s…"</span>   <span class="token number">11</span> hours ago   Up <span class="token number">11</span> hours   <span class="token number">0.0</span>.0.0:6376-<span class="token operator">></span><span class="token number">6379</span>/tcp, :::6376-<span class="token operator">></span><span class="token number">6379</span>/tcp, <span class="token number">0.0</span>.0.0:16376-<span class="token operator">></span><span class="token number">16379</span>/tcp, :::16376-<span class="token operator">></span><span class="token number">16379</span>/tcp   redis-6
+31b5ce0cd98c   redis:5.0.9-alpine3.11   <span class="token string">"docker-entrypoint.s…"</span>   <span class="token number">11</span> hours ago   Up <span class="token number">11</span> hours   <span class="token number">0.0</span>.0.0:6375-<span class="token operator">></span><span class="token number">6379</span>/tcp, :::6375-<span class="token operator">></span><span class="token number">6379</span>/tcp, <span class="token number">0.0</span>.0.0:16375-<span class="token operator">></span><span class="token number">16379</span>/tcp, :::16375-<span class="token operator">></span><span class="token number">16379</span>/tcp   redis-5
+ccc05f2ab8bc   redis:5.0.9-alpine3.11   <span class="token string">"docker-entrypoint.s…"</span>   <span class="token number">11</span> hours ago   Up <span class="token number">11</span> hours   <span class="token number">0.0</span>.0.0:6374-<span class="token operator">></span><span class="token number">6379</span>/tcp, :::6374-<span class="token operator">></span><span class="token number">6379</span>/tcp, <span class="token number">0.0</span>.0.0:16374-<span class="token operator">></span><span class="token number">16379</span>/tcp, :::16374-<span class="token operator">></span><span class="token number">16379</span>/tcp   redis-4
+20e40bf0dc2b   redis:5.0.9-alpine3.11   <span class="token string">"docker-entrypoint.s…"</span>   <span class="token number">11</span> hours ago   Up <span class="token number">11</span> hours   <span class="token number">0.0</span>.0.0:6373-<span class="token operator">></span><span class="token number">6379</span>/tcp, :::6373-<span class="token operator">></span><span class="token number">6379</span>/tcp, <span class="token number">0.0</span>.0.0:16373-<span class="token operator">></span><span class="token number">16379</span>/tcp, :::16373-<span class="token operator">></span><span class="token number">16379</span>/tcp   redis-3
+f32e7a237dc7   redis:5.0.9-alpine3.11   <span class="token string">"docker-entrypoint.s…"</span>   <span class="token number">11</span> hours ago   Up <span class="token number">11</span> hours   <span class="token number">0.0</span>.0.0:6372-<span class="token operator">></span><span class="token number">6379</span>/tcp, :::6372-<span class="token operator">></span><span class="token number">6379</span>/tcp, <span class="token number">0.0</span>.0.0:16372-<span class="token operator">></span><span class="token number">16379</span>/tcp, :::16372-<span class="token operator">></span><span class="token number">16379</span>/tcp   redis-2
+9b52db0451d1   redis:5.0.9-alpine3.11   <span class="token string">"docker-entrypoint.s…"</span>   <span class="token number">11</span> hours ago   Up <span class="token number">11</span> hours   <span class="token number">0.0</span>.0.0:6371-<span class="token operator">></span><span class="token number">6379</span>/tcp, :::6371-<span class="token operator">></span><span class="token number">6379</span>/tcp, <span class="token number">0.0</span>.0.0:16371-<span class="token operator">></span><span class="token number">16379</span>/tcp, :::16371-<span class="token operator">></span><span class="token number">16379</span>/tcp   redis-1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="退出容器"><a href="#退出容器" class="headerlink" title="退出容器"></a>退出容器</h3><pre class="line-numbers language-shel" data-language="shel"><code class="language-shel">exit
 ctrl + P + Q # 容器不停止退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -523,29 +523,29 @@ docker stop 容器ID或名称
 docker restart 容器ID或名称
 docker kill 容器ID或名称 # 强制停止容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="常用其他命令"><a href="#常用其他命令" class="headerlink" title="常用其他命令"></a>常用其他命令</h2><h3 id="后台启动命令"><a href="#后台启动命令" class="headerlink" title="后台启动命令"></a>后台启动命令</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run -d 镜像名 # 常见问题：docker容器使用后台运行，就必须要有一个前台进程，否则docker发现没有 应用，就会自己停止。 # nginx容器启动后，发现自己没有提供服务，就会立即停止<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="常用其他命令"><a href="#常用其他命令" class="headerlink" title="常用其他命令"></a>常用其他命令</h2><h3 id="后台启动命令"><a href="#后台启动命令" class="headerlink" title="后台启动命令"></a>后台启动命令</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run -d 镜像名 <span class="token comment"># 常见问题：docker容器使用后台运行，就必须要有一个前台进程，否则docker发现没有 应用，就会自己停止。 # nginx容器启动后，发现自己没有提供服务，就会立即停止</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h3><pre class="line-numbers language-shel" data-language="shel"><code class="language-shel">docker logs 容器名 # 可选参数 -f 持续显示日志 -t 显示日志时间戳 -n 自定义日志条数显示<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="查看容器中进程信息"><a href="#查看容器中进程信息" class="headerlink" title="查看容器中进程信息"></a>查看容器中进程信息</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker top 容器名 
-UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD polkitd             48681               48660               0                   7月23                ?                   00:01:21            redis-server &#x2F;etc&#x2F;redis&#x2F;redis.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="查看容器中进程信息"><a href="#查看容器中进程信息" class="headerlink" title="查看容器中进程信息"></a>查看容器中进程信息</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker <span class="token function">top</span> 容器名 
+<span class="token environment constant">UID</span>                 PID                 <span class="token environment constant">PPID</span>                C                   STIME               TTY                 TIME                CMD polkitd             <span class="token number">48681</span>               <span class="token number">48660</span>               <span class="token number">0</span>                   <span class="token number">7</span>月23                ?                   00:01:21            redis-server /etc/redis/redis.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h3 id="查看容器元数据"><a href="#查看容器元数据" class="headerlink" title="查看容器元数据##"></a>查看容器元数据##</h3><pre class="line-numbers language-shel" data-language="shel"><code class="language-shel">docker inspect 容器名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="进入当前正在运行的容器"><a href="#进入当前正在运行的容器" class="headerlink" title="进入当前正在运行的容器##"></a>进入当前正在运行的容器##</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 方式一 
-docker exec -it 容器名 &#x2F;bin&#x2F;bash 或 sh 
-进入容器后开启一个新的终端，可以在里面操作(常用) 
-# 方式二 
-docker attach -it 容器名 &#x2F;bin&#x2F;bash 或 sh 
+<h3 id="进入当前正在运行的容器"><a href="#进入当前正在运行的容器" class="headerlink" title="进入当前正在运行的容器##"></a>进入当前正在运行的容器##</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 方式一 </span>
+docker <span class="token builtin class-name">exec</span> -it 容器名 /bin/bash 或 <span class="token function">sh</span> 
+进入容器后开启一个新的终端，可以在里面操作<span class="token punctuation">(</span>常用<span class="token punctuation">)</span> 
+<span class="token comment"># 方式二 </span>
+docker attach -it 容器名 /bin/bash 或 <span class="token function">sh</span> 
 进入容器当前正在运行的终端<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<h3 id="从容器内拷贝文件到主机上"><a href="#从容器内拷贝文件到主机上" class="headerlink" title="从容器内拷贝文件到主机上"></a>从容器内拷贝文件到主机上</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker cp 容器名：容器内路径 目的主机路径<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="从容器内拷贝文件到主机上"><a href="#从容器内拷贝文件到主机上" class="headerlink" title="从容器内拷贝文件到主机上"></a>从容器内拷贝文件到主机上</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker <span class="token function">cp</span> 容器名：容器内路径 目的主机路径<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 <h3 id="容器数据卷"><a href="#容器数据卷" class="headerlink" title="容器数据卷"></a>容器数据卷</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run -v 本机目录：容器目录 
-docker run --it -v &#x2F;home&#x2F;ceshi:&#x2F;home centos &#x2F;bin&#x2F;bash 
+docker run --it -v /home/ceshi:/home centos /bin/bash 
 实现数据持久化<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="具名挂载和匿名挂载"><a href="#具名挂载和匿名挂载" class="headerlink" title="具名挂载和匿名挂载"></a>具名挂载和匿名挂载</h3><pre class="line-numbers language-shel" data-language="shel"><code class="language-shel"># 匿名挂载
@@ -560,16 +560,16 @@ docker -run -d -P --name nginx02 -v juming-nginx:&#x2F;etc&#x2F;nginx nginx<span
 
 <p>所有的docker容器内的卷，没有指定目录的情况下都在/var/lib/docker/volumes/xxxx/_data</p>
 <p>我们通过具名挂载可以方便的找到我们的一个卷，大多数情况在使用的具名挂载</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-v 容器内路径 # 匿名挂载
--v 卷名:容器内路径 # 具名挂载
--v &#x2F;宿主机路径：&#x2F;容器内路径 # 指定路径挂载<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-v 容器内路径 <span class="token comment"># 匿名挂载</span>
+-v 卷名:容器内路径 <span class="token comment"># 具名挂载</span>
+-v /宿主机路径：/容器内路径 <span class="token comment"># 指定路径挂载</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 通过-v容器内路径 ：ro rw改变读写权限
-ro readonly # 只读
-rw readwrite # 可读可写
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 通过-v容器内路径 ：ro rw改变读写权限</span>
+ro <span class="token builtin class-name">readonly</span> <span class="token comment"># 只读</span>
+rw readwrite <span class="token comment"># 可读可写</span>
 
-docker run -d -P --name nginx01 -v juming-nginx:&#x2F;etc&#x2F;nginx:ro nginx
-docker run -d -P --name nginx01 -v juming-nginx:&#x2F;etc&#x2F;nginx:rw nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+docker run -d -P --name nginx01 -v juming-nginx:/etc/nginx:ro nginx
+docker run -d -P --name nginx01 -v juming-nginx:/etc/nginx:rw nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="数据卷容器"><a href="#数据卷容器" class="headerlink" title="数据卷容器"></a>数据卷容器</h3><p>多个mysql数据同步</p>
 <pre class="line-numbers language-shel" data-language="shel"><code class="language-shel">docker run -d -p 3310:3306 -v &#x2F;etc&#x2F;mysql&#x2F;conf.d -v &#x2F;var&#x2F;lib&#x2F;mysql 
@@ -1131,7 +1131,7 @@ docker run -d -p 3310:3306 -e MYSQL_ROOT_PASSWORD&#x3D;123456 --name mysql02
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">1.2k</span>
+                        class="white-color">1.1k</span>
             
             
             
