@@ -465,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    341
+                    385
                 </div>
                 
 
@@ -505,7 +505,16 @@
 -p <span class="token number">4000</span>:4000 <span class="token punctuation">\</span>
 mkjz/hexo:silm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>若为arm64架构，请在tag后指定-arm64版本(例:mkjz/hexo:silm-arm64)</p>
+
+
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run -p --name<span class="token operator">=</span>hexo <span class="token punctuation">\</span>
+-v /blog:/app <span class="token punctuation">\</span>
+-p <span class="token number">4000</span>:4000 <span class="token punctuation">\</span>
+mkjz/hexo:latest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>注：</strong></p>
+<p><strong>1.silm镜像为精简版本，镜像内除hexo-cli外 没有额外安装任何软件包以及npm插件 若有diy需求 请自行访问容器使用指令安装(若为arm64架构，请在tag后指定-arm64版本 例:mkjz/hexo:silm-arm64 )</strong></p>
+<p><strong>2.latest镜像为全量版本，包含git,hexo-permalink-pinyin,hexo-wordcount常用插件，目前只支持amd64架构</strong></p>
 <h3 id="访问Hexo"><a href="#访问Hexo" class="headerlink" title="访问Hexo"></a>访问Hexo</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">访问hexo博客界面 http://<span class="token operator">&lt;</span>ip_address<span class="token operator">></span>:4000  此端口可在启动命令-p中自定义<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="访问容器"><a href="#访问容器" class="headerlink" title="访问容器"></a>访问容器</h3><p>如果您希望执行进一步的配置，即安装自定义主题与安装npm包，可以通过如下指令。访问容器 </p>
@@ -518,7 +527,12 @@ mkjz/hexo:silm<span aria-hidden="true" class="line-numbers-rows"><span></span><s
 
 
 
-<p><strong>注：silm镜像为精简版本，镜像内除hexo-cli外 没有额外安装任何软件包以及npm插件 若有diy需求 请自行访问容器使用指令安装</strong></p>
+
+
+
+
+
+
 
                 
             </div>
@@ -1088,7 +1102,7 @@ mkjz/hexo:silm<span aria-hidden="true" class="line-numbers-rows"><span></span><s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">2.1k</span>
+                        class="white-color">2k</span>
             
             
             
