@@ -490,8 +490,7 @@
 docker info    # 显示docker的系统信息 包括容器和镜像数量
 docker 命令 --help # 帮助命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><p>docker images 查看所有镜像</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# docker images
+<h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><h4 id="docker-images-查看所有镜像"><a href="#docker-images-查看所有镜像" class="headerlink" title="docker images 查看所有镜像"></a>docker images 查看所有镜像</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# docker images
 REPOSITORY    TAG                IMAGE ID       CREATED         SIZE
 mkjz&#x2F;centos   latest             ad89ab41f5d7   40 hours ago    304MB
 tomcat        latest             921ef208ab56   2 days ago      668MB
@@ -513,8 +512,7 @@ Options:
       --no-trunc        Don&#39;t truncate output
   -q, --quiet           Only show image IDs 只显示镜像ID<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>docker search 搜索镜像</p>
-<pre class="line-numbers language-she" data-language="she"><code class="language-she">[root@localhost ~]# docker search mysql
+<h4 id="docker-search-搜索镜像"><a href="#docker-search-搜索镜像" class="headerlink" title="docker search 搜索镜像"></a>docker search 搜索镜像</h4><pre class="line-numbers language-she" data-language="she"><code class="language-she">[root@localhost ~]# docker search mysql
 NAME                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
 mysql                             MySQL is a widely used, open-source relation…   11158     [OK]       
 mariadb                           MariaDB Server is a high performing open sou…   4235      [OK]       
@@ -531,8 +529,7 @@ Options:
       --no-trunc        Don&#39;t truncate output
 --filter&#x3D;STARS&#x3D;3000 # 搜索出来的STARS是大于3000的<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>docker pull 下载镜像</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# docker pull redis
+<h4 id="docker-pull-下载镜像"><a href="#docker-pull-下载镜像" class="headerlink" title="docker pull 下载镜像"></a>docker pull 下载镜像</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# docker pull redis
 Using default tag: latest # 如果不写Tag 默认为最新版本
 latest: Pulling from library&#x2F;redis # 分层下载，docker联合文件系统
 33847f680f63: Pull complete 
@@ -545,15 +542,12 @@ Digest: sha256:cd0c68c5479f2db4b9e2c5fbfdb7a8acb77625322dd5b474578515422d3ddb59
 Status: Downloaded newer image for redis:latest
 docker.io&#x2F;library&#x2F;redis:latest # 真实地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>docker rmi 删除镜像</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">[root@localhost ~]# docker rmi redis # 删除指定容器
+<h4 id="docker-rmi-删除镜像"><a href="#docker-rmi-删除镜像" class="headerlink" title="docker rmi 删除镜像"></a>docker rmi 删除镜像</h4><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">[root@localhost ~]# docker rmi redis # 删除指定容器
 docker rmi 容器名 容器名 容器名 # 删除多个容器
 docker rmi $(docker images -aq) # 删除全部容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>docker commit 提交镜像</p>
-<pre class="line-numbers language-she" data-language="she"><code class="language-she">docker commit 提交容器成为一个新的副本
+<h4 id="docker-commit-提交镜像"><a href="#docker-commit-提交镜像" class="headerlink" title="docker commit 提交镜像"></a>docker commit 提交镜像</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker commit 提交容器成为一个新的副本
 docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; 容器名称 目标镜像名:[tag]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 
 
                 
@@ -792,18 +786,17 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/07/26/Docker%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4/">
+                <a href="/2021/07/26/%E5%9F%BA%E4%BA%8EDocker%E5%AE%B9%E5%99%A8%E7%9A%84HEXO%E5%8D%9A%E5%AE%A2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Docker镜像命令">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="基于Docker容器的HEXO博客">
                         
-                        <span class="card-title">Docker镜像命令</span>
+                        <span class="card-title">基于Docker容器的HEXO博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -813,9 +806,9 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-26
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -824,12 +817,11 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Docker/">
-                        <span class="chip bg-color">Docker</span>
+                    <a href="/tags/Docker-Hexo/">
+                        <span class="chip bg-color">Docker Hexo</span>
                     </a>
                     
                 </div>
@@ -1116,7 +1108,7 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">1.7k</span>
+                        class="white-color">2k</span>
             
             
             

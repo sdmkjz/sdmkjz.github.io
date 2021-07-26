@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, MkJz&#39;s blog">
+    <meta name="keywords" content="基于Docker容器的HEXO博客, MkJz&#39;s blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | MkJz&#39;s blog</title>
+    <title>基于Docker容器的HEXO博客 | MkJz&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">基于Docker容器的HEXO博客</h1>
                 </div>
             </div>
         </div>
@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Docker-Hexo/">
+                                <span class="chip bg-color">Docker Hexo</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -443,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-25
+                    2021-07-26
                 </div>
                 
 
@@ -452,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    322
                 </div>
                 
 
@@ -482,19 +486,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="基于Docker容器的HEXO博客"><a href="#基于Docker容器的HEXO博客" class="headerlink" title="基于Docker容器的HEXO博客"></a>基于Docker容器的HEXO博客</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>hexo是一个基于Node.js 快速、简洁且高效的博客框架。</p>
+<p>Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octopress 的大多数插件</p>
+<p>同时支持部署到Github Pages等平台</p>
+<p>本镜像启动即用，部署简单，同时支持amd64/arm64架构</p>
+<h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><p>创建一个新的博客容器，-p为后台运行(可选)–name=为容器名，可自行指定，使用 -v target:/app 指定您的博客位置,-p为端口映射-p 4000:4000前端口可自行更改：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run -p --name<span class="token operator">=</span>hexo <span class="token punctuation">\</span>
+-v /blog:/app <span class="token punctuation">\</span>
+-p <span class="token number">4000</span>:4000 <span class="token punctuation">\</span>
+mkjz/hexo:silm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="访问Hexo"><a href="#访问Hexo" class="headerlink" title="访问Hexo"></a>访问Hexo</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">访问hexo博客界面 http://<span class="token operator">&lt;</span>ip_address<span class="token operator">></span>:4000  此端口可在启动命令-p中自定义<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="访问容器"><a href="#访问容器" class="headerlink" title="访问容器"></a>访问容器</h3><p>如果您希望执行进一步的配置，即安装自定义主题与安装npm包，可以通过如下指令。访问容器 </p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker <span class="token builtin class-name">exec</span> -it hexo /bin/sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>修改配置文件或添加主题后，需重启容器，网站将自动重构</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker restart 容器名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看日志</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker logs 容器名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+
+<p><strong>注：silm镜像为精简版本，镜像内除hexo-cli外 没有额外安装任何软件包以及npm插件 若有diy需求 请自行访问容器使用指令安装</strong></p>
 
                 
             </div>
@@ -521,7 +535,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sdmkjz.github.io/2021/07/25/hello-world/">https://sdmkjz.github.io/2021/07/25/hello-world/</a>
+                    <a href="https://sdmkjz.github.io/2021/07/26/%E5%9F%BA%E4%BA%8EDocker%E5%AE%B9%E5%99%A8%E7%9A%84HEXO%E5%8D%9A%E5%AE%A2/">https://sdmkjz.github.io/2021/07/26/%E5%9F%BA%E4%BA%8EDocker%E5%AE%B9%E5%99%A8%E7%9A%84HEXO%E5%8D%9A%E5%AE%A2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -558,7 +572,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Docker-Hexo/">
+                                    <span class="chip bg-color">Docker Hexo</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -728,17 +746,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/07/25/Docker%E5%AE%B9%E5%99%A8%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                <a href="/2021/07/26/%E5%9F%BA%E4%BA%8EDocker%E5%AE%B9%E5%99%A8%E7%9A%84HEXO%E5%8D%9A%E5%AE%A2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Docker容器常用命令">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="基于Docker容器的HEXO博客">
                         
-                        <span class="card-title">Docker容器常用命令</span>
+                        <span class="card-title">基于Docker容器的HEXO博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -748,9 +767,55 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-25
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            MkJz
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker-Hexo/">
+                        <span class="chip bg-color">Docker Hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07/26/Docker%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Docker镜像命令">
+                        
+                        <span class="card-title">Docker镜像命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -767,44 +832,6 @@
                     </a>
                     
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/07/25/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-25
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            MkJz
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>
