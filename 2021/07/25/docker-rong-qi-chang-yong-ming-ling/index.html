@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Docker镜像命令, MkJz&#39;s blog">
+    <meta name="keywords" content="Docker容器常用命令, MkJz&#39;s blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Docker镜像命令 | MkJz&#39;s blog</title>
+    <title>Docker容器常用命令 | MkJz&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Docker镜像命令</h1>
+                    <h1 class="description center-align post-title">Docker容器常用命令</h1>
                 </div>
             </div>
         </div>
@@ -447,28 +447,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-26
+                    2021-07-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-26
+                    2021-07-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    506
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
 
@@ -491,68 +491,97 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Docker镜像命令"><a href="#Docker镜像命令" class="headerlink" title="Docker镜像命令"></a>Docker镜像命令</h1><h3 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker version  # 显示docker的版本信息
-docker info    # 显示docker的系统信息 包括容器和镜像数量
-docker 命令 --help # 帮助命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+                <h1 id="Docker容器命令"><a href="#Docker容器命令" class="headerlink" title="Docker容器命令"></a>Docker容器命令</h1><h3 id="新建容器并启动"><a href="#新建容器并启动" class="headerlink" title="新建容器并启动"></a>新建容器并启动</h3><pre class="line-numbers language-shel" data-language="shel"><code class="language-shel">docker run [可选参数] 镜像名称
 
-<h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><h4 id="docker-images-查看所有镜像"><a href="#docker-images-查看所有镜像" class="headerlink" title="docker images 查看所有镜像"></a>docker images 查看所有镜像</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# docker images
-REPOSITORY    TAG                IMAGE ID       CREATED         SIZE
-mkjz&#x2F;centos   latest             ad89ab41f5d7   40 hours ago    304MB
-tomcat        latest             921ef208ab56   2 days ago      668MB
-mysql         latest             95db2e2bd882   4 days ago      514MB
-sbwml&#x2F;alist   latest             ae685d913f61   13 days ago     28.9MB
-redis         5.0.9-alpine3.11   3661c84ee9d0   15 months ago   29.8MB
-REPOSITORY 仓库源
-TAG 版本信息
-IMAGE ID 镜像ID
-CREATED 镜像创建时间
-SIZE 镜像大小
+# 参数说明
+--name&#x3D; 容器名称
+-d 后台运行方式
+-it 采用交互模式运行
+-p 主机端口:容器端口 指定容器端口映射 
+-P 随机指定端口
+-v 卷挂载
+-e 环境配置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-# 可选项
-Options:
-  -a, --all             Show all images (default hides intermediate images)
-      --digests         Show digests
-  -f, --filter filter   Filter output based on conditions provided
-      --format string   Pretty-print images using a Go template
-      --no-trunc        Don&#39;t truncate output
-  -q, --quiet           Only show image IDs 只显示镜像ID<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="列出所有的容器"><a href="#列出所有的容器" class="headerlink" title="列出所有的容器"></a>列出所有的容器</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker ps命令
+# 列出正在运行的容器
+-a # 列出所有的容器
+-n&#x3D;? # 显示最近创建的容器
+-q # 只显示容器ID
+[root@localhost ~]# docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED        STATUS        PORTS                                                                                      NAMES
+11025ffd4e80   redis:5.0.9-alpine3.11   &quot;docker-entrypoint.s…&quot;   11 hours ago   Up 11 hours   0.0.0.0:6376-&gt;6379&#x2F;tcp, :::6376-&gt;6379&#x2F;tcp, 0.0.0.0:16376-&gt;16379&#x2F;tcp, :::16376-&gt;16379&#x2F;tcp   redis-6
+31b5ce0cd98c   redis:5.0.9-alpine3.11   &quot;docker-entrypoint.s…&quot;   11 hours ago   Up 11 hours   0.0.0.0:6375-&gt;6379&#x2F;tcp, :::6375-&gt;6379&#x2F;tcp, 0.0.0.0:16375-&gt;16379&#x2F;tcp, :::16375-&gt;16379&#x2F;tcp   redis-5
+ccc05f2ab8bc   redis:5.0.9-alpine3.11   &quot;docker-entrypoint.s…&quot;   11 hours ago   Up 11 hours   0.0.0.0:6374-&gt;6379&#x2F;tcp, :::6374-&gt;6379&#x2F;tcp, 0.0.0.0:16374-&gt;16379&#x2F;tcp, :::16374-&gt;16379&#x2F;tcp   redis-4
+20e40bf0dc2b   redis:5.0.9-alpine3.11   &quot;docker-entrypoint.s…&quot;   11 hours ago   Up 11 hours   0.0.0.0:6373-&gt;6379&#x2F;tcp, :::6373-&gt;6379&#x2F;tcp, 0.0.0.0:16373-&gt;16379&#x2F;tcp, :::16373-&gt;16379&#x2F;tcp   redis-3
+f32e7a237dc7   redis:5.0.9-alpine3.11   &quot;docker-entrypoint.s…&quot;   11 hours ago   Up 11 hours   0.0.0.0:6372-&gt;6379&#x2F;tcp, :::6372-&gt;6379&#x2F;tcp, 0.0.0.0:16372-&gt;16379&#x2F;tcp, :::16372-&gt;16379&#x2F;tcp   redis-2
+9b52db0451d1   redis:5.0.9-alpine3.11   &quot;docker-entrypoint.s…&quot;   11 hours ago   Up 11 hours   0.0.0.0:6371-&gt;6379&#x2F;tcp, :::6371-&gt;6379&#x2F;tcp, 0.0.0.0:16371-&gt;16379&#x2F;tcp, :::16371-&gt;16379&#x2F;tcp   redis-1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="docker-search-搜索镜像"><a href="#docker-search-搜索镜像" class="headerlink" title="docker search 搜索镜像"></a>docker search 搜索镜像</h4><pre class="line-numbers language-she" data-language="she"><code class="language-she">[root@localhost ~]# docker search mysql
-NAME                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
-mysql                             MySQL is a widely used, open-source relation…   11158     [OK]       
-mariadb                           MariaDB Server is a high performing open sou…   4235      [OK]       
-mysql&#x2F;mysql-server                Optimized MySQL Server Docker images. Create…   830                  [OK]
-percona                           Percona Server is a fork of the MySQL relati…   548       [OK]       
-phpmyadmin                        phpMyAdmin - A web interface for MySQL and M…   277       [OK]       
-centos&#x2F;mysql-57-centos7           MySQL 5.7 SQL database server                   90                   
+<h3 id="退出容器"><a href="#退出容器" class="headerlink" title="退出容器"></a>退出容器</h3><pre class="line-numbers language-shel" data-language="shel"><code class="language-shel">exit
+ctrl + P + Q # 容器不停止退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-# 可选项
-Options:
-  -f, --filter filter   Filter output based on conditions provided
-      --format string   Pretty-print search using a Go template
-      --limit int       Max number of search results (default 25)
-      --no-trunc        Don&#39;t truncate output
---filter&#x3D;STARS&#x3D;3000 # 搜索出来的STARS是大于3000的<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h3><pre class="line-numbers language-shel" data-language="shel"><code class="language-shel">docker rm 容器ID或名称 # 不能删除正在运行的容器 如果要强制删除rm -f
+docker rm -f $(docker ps -aq) # 删除所有容器
+docker ps -a -q | xargs docker rm # 删除所有容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="docker-pull-下载镜像"><a href="#docker-pull-下载镜像" class="headerlink" title="docker pull 下载镜像"></a>docker pull 下载镜像</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# docker pull redis
-Using default tag: latest # 如果不写Tag 默认为最新版本
-latest: Pulling from library&#x2F;redis # 分层下载，docker联合文件系统
-33847f680f63: Pull complete 
-26a746039521: Pull complete 
-18d87da94363: Pull complete 
-5e118a708802: Pull complete 
-ecf0dbe7c357: Pull complete 
-46f280ba52da: Pull complete 
-Digest: sha256:cd0c68c5479f2db4b9e2c5fbfdb7a8acb77625322dd5b474578515422d3ddb59
-Status: Downloaded newer image for redis:latest
-docker.io&#x2F;library&#x2F;redis:latest # 真实地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="启动和停止容器操作"><a href="#启动和停止容器操作" class="headerlink" title="启动和停止容器操作"></a>启动和停止容器操作</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">docker start 容器ID或名称
+docker stop 容器ID或名称
+docker restart 容器ID或名称
+docker kill 容器ID或名称 # 强制停止容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="docker-rmi-删除镜像"><a href="#docker-rmi-删除镜像" class="headerlink" title="docker rmi 删除镜像"></a>docker rmi 删除镜像</h4><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">[root@localhost ~]# docker rmi redis # 删除指定容器
-docker rmi 容器名 容器名 容器名 # 删除多个容器
-docker rmi $(docker images -aq) # 删除全部容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="常用其他命令"><a href="#常用其他命令" class="headerlink" title="常用其他命令"></a>常用其他命令</h2><h3 id="后台启动命令"><a href="#后台启动命令" class="headerlink" title="后台启动命令"></a>后台启动命令</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run -d 镜像名 # 常见问题：docker容器使用后台运行，就必须要有一个前台进程，否则docker发现没有 应用，就会自己停止。 # nginx容器启动后，发现自己没有提供服务，就会立即停止<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="docker-commit-提交镜像"><a href="#docker-commit-提交镜像" class="headerlink" title="docker commit 提交镜像"></a>docker commit 提交镜像</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker commit 提交容器成为一个新的副本
-docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; 容器名称 目标镜像名:[tag]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h3><pre class="line-numbers language-shel" data-language="shel"><code class="language-shel">docker logs 容器名 # 可选参数 -f 持续显示日志 -t 显示日志时间戳 -n 自定义日志条数显示<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="查看容器中进程信息"><a href="#查看容器中进程信息" class="headerlink" title="查看容器中进程信息"></a>查看容器中进程信息</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker top 容器名 
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD polkitd             48681               48660               0                   7月23                ?                   00:01:21            redis-server &#x2F;etc&#x2F;redis&#x2F;redis.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="查看容器元数据"><a href="#查看容器元数据" class="headerlink" title="查看容器元数据##"></a>查看容器元数据##</h3><pre class="line-numbers language-shel" data-language="shel"><code class="language-shel">docker inspect 容器名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="进入当前正在运行的容器"><a href="#进入当前正在运行的容器" class="headerlink" title="进入当前正在运行的容器"></a>进入当前正在运行的容器</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 方式一 
+docker exec -it 容器名 &#x2F;bin&#x2F;bash 或 sh 
+进入容器后开启一个新的终端，可以在里面操作(常用) 
+# 方式二 
+docker attach -it 容器名 &#x2F;bin&#x2F;bash 或 sh 
+进入容器当前正在运行的终端<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="从容器内拷贝文件到主机上"><a href="#从容器内拷贝文件到主机上" class="headerlink" title="从容器内拷贝文件到主机上"></a>从容器内拷贝文件到主机上</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker cp 容器名：容器内路径 目的主机路径<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<h3 id="容器数据卷"><a href="#容器数据卷" class="headerlink" title="容器数据卷"></a>容器数据卷</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run -v 本机目录：容器目录 
+docker run --it -v &#x2F;home&#x2F;ceshi:&#x2F;home centos &#x2F;bin&#x2F;bash 
+实现数据持久化<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="具名挂载和匿名挂载"><a href="#具名挂载和匿名挂载" class="headerlink" title="具名挂载和匿名挂载"></a>具名挂载和匿名挂载</h3><pre class="line-numbers language-shel" data-language="shel"><code class="language-shel"># 匿名挂载
+-V 容器内路径
+docker run -d -P --name nginx01 -v &#x2F;etc&#x2F;nginx nginx
+
+# 查看所有volume的情况
+docker volume ls
+
+# 具名挂载
+docker -run -d -P --name nginx02 -v juming-nginx:&#x2F;etc&#x2F;nginx nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>所有的docker容器内的卷，没有指定目录的情况下都在/var/lib/docker/volumes/xxxx/_data</p>
+<p>我们通过具名挂载可以方便的找到我们的一个卷，大多数情况在使用的具名挂载</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-v 容器内路径 # 匿名挂载
+-v 卷名:容器内路径 # 具名挂载
+-v &#x2F;宿主机路径：&#x2F;容器内路径 # 指定路径挂载<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 通过-v容器内路径 ：ro rw改变读写权限
+ro readonly # 只读
+rw readwrite # 可读可写
+
+docker run -d -P --name nginx01 -v juming-nginx:&#x2F;etc&#x2F;nginx:ro nginx
+docker run -d -P --name nginx01 -v juming-nginx:&#x2F;etc&#x2F;nginx:rw nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="数据卷容器"><a href="#数据卷容器" class="headerlink" title="数据卷容器"></a>数据卷容器</h3><p>多个mysql数据同步</p>
+<pre class="line-numbers language-shel" data-language="shel"><code class="language-shel">docker run -d -p 3310:3306 -v &#x2F;etc&#x2F;mysql&#x2F;conf.d -v &#x2F;var&#x2F;lib&#x2F;mysql 
+-e MYSQL_ROOT_PASSWORD&#x3D;123456 --name mysql01 mysql:5.7
+
+docker run -d -p 3310:3306 -e MYSQL_ROOT_PASSWORD&#x3D;123456 --name mysql02 
+--volumes-form mysql01 mysql:5.7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -580,7 +609,7 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sdmkjz.github.io/2021/07/26/Docker%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4/">https://sdmkjz.github.io/2021/07/26/Docker%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4/</a>
+                    <a href="https://sdmkjz.github.io/2021/07/25/docker-rong-qi-chang-yong-ming-ling/">https://sdmkjz.github.io/2021/07/25/docker-rong-qi-chang-yong-ming-ling/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -795,13 +824,13 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/07/26/%E5%9F%BA%E4%BA%8EDocker%E5%AE%B9%E5%99%A8%E7%9A%84HEXO%E5%8D%9A%E5%AE%A2/">
+                <a href="/2021/07/26/docker-jing-xiang-ming-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="基于Docker容器的HEXO博客">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Docker镜像命令">
                         
-                        <span class="card-title">基于Docker容器的HEXO博客</span>
+                        <span class="card-title">Docker镜像命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -829,10 +858,6 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
                         <span class="chip bg-color">Docker</span>
                     </a>
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -844,13 +869,13 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/25/Docker%E5%AE%B9%E5%99%A8%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                <a href="/2021/07/25/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Docker容器常用命令">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">Docker容器常用命令</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -870,14 +895,6 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Docker/">
-                        <span class="chip bg-color">Docker</span>
-                    </a>
-                    
                 </div>
                 
             </div>
