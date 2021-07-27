@@ -461,7 +461,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    506
+                    494
                 </div>
                 
 
@@ -491,30 +491,30 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Docker镜像命令"><a href="#Docker镜像命令" class="headerlink" title="Docker镜像命令"></a>Docker镜像命令</h1><h3 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker version  # 显示docker的版本信息
-docker info    # 显示docker的系统信息 包括容器和镜像数量
-docker 命令 --help # 帮助命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+                <h1 id="Docker镜像命令"><a href="#Docker镜像命令" class="headerlink" title="Docker镜像命令"></a>Docker镜像命令</h1><h3 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker version  <span class="token comment"># 显示docker的版本信息</span>
+docker info    <span class="token comment"># 显示docker的系统信息 包括容器和镜像数量</span>
+docker 命令 --help <span class="token comment"># 帮助命令</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><h4 id="docker-images-查看所有镜像"><a href="#docker-images-查看所有镜像" class="headerlink" title="docker images 查看所有镜像"></a>docker images 查看所有镜像</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# docker images
+<h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><h4 id="docker-images-查看所有镜像"><a href="#docker-images-查看所有镜像" class="headerlink" title="docker images 查看所有镜像"></a>docker images 查看所有镜像</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker images</span>
 REPOSITORY    TAG                IMAGE ID       CREATED         SIZE
-mkjz&#x2F;centos   latest             ad89ab41f5d7   40 hours ago    304MB
-tomcat        latest             921ef208ab56   2 days ago      668MB
-mysql         latest             95db2e2bd882   4 days ago      514MB
-sbwml&#x2F;alist   latest             ae685d913f61   13 days ago     28.9MB
-redis         5.0.9-alpine3.11   3661c84ee9d0   15 months ago   29.8MB
+mkjz/centos   latest             ad89ab41f5d7   <span class="token number">40</span> hours ago    304MB
+tomcat        latest             921ef208ab56   <span class="token number">2</span> days ago      668MB
+mysql         latest             95db2e2bd882   <span class="token number">4</span> days ago      514MB
+sbwml/alist   latest             ae685d913f61   <span class="token number">13</span> days ago     <span class="token number">28</span>.9MB
+redis         <span class="token number">5.0</span>.9-alpine3.11   3661c84ee9d0   <span class="token number">15</span> months ago   <span class="token number">29</span>.8MB
 REPOSITORY 仓库源
 TAG 版本信息
 IMAGE ID 镜像ID
 CREATED 镜像创建时间
 SIZE 镜像大小
 
-# 可选项
+<span class="token comment"># 可选项</span>
 Options:
-  -a, --all             Show all images (default hides intermediate images)
+  -a, --all             Show all images <span class="token punctuation">(</span>default hides intermediate images<span class="token punctuation">)</span>
       --digests         Show digests
   -f, --filter filter   Filter output based on conditions provided
       --format string   Pretty-print images using a Go template
-      --no-trunc        Don&#39;t truncate output
+      --no-trunc        Don't truncate output
   -q, --quiet           Only show image IDs 只显示镜像ID<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="docker-search-搜索镜像"><a href="#docker-search-搜索镜像" class="headerlink" title="docker search 搜索镜像"></a>docker search 搜索镜像</h4><pre class="line-numbers language-she" data-language="she"><code class="language-she">[root@localhost ~]# docker search mysql
@@ -534,9 +534,9 @@ Options:
       --no-trunc        Don&#39;t truncate output
 --filter&#x3D;STARS&#x3D;3000 # 搜索出来的STARS是大于3000的<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="docker-pull-下载镜像"><a href="#docker-pull-下载镜像" class="headerlink" title="docker pull 下载镜像"></a>docker pull 下载镜像</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# docker pull redis
-Using default tag: latest # 如果不写Tag 默认为最新版本
-latest: Pulling from library&#x2F;redis # 分层下载，docker联合文件系统
+<h4 id="docker-pull-下载镜像"><a href="#docker-pull-下载镜像" class="headerlink" title="docker pull 下载镜像"></a>docker pull 下载镜像</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker pull redis</span>
+Using default tag: latest <span class="token comment"># 如果不写Tag 默认为最新版本</span>
+latest: Pulling from library/redis <span class="token comment"># 分层下载，docker联合文件系统</span>
 33847f680f63: Pull complete 
 26a746039521: Pull complete 
 18d87da94363: Pull complete 
@@ -544,15 +544,15 @@ latest: Pulling from library&#x2F;redis # 分层下载，docker联合文件系�
 ecf0dbe7c357: Pull complete 
 46f280ba52da: Pull complete 
 Digest: sha256:cd0c68c5479f2db4b9e2c5fbfdb7a8acb77625322dd5b474578515422d3ddb59
-Status: Downloaded newer image for redis:latest
-docker.io&#x2F;library&#x2F;redis:latest # 真实地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+Status: Downloaded newer image <span class="token keyword">for</span> redis:latest
+docker.io/library/redis:latest <span class="token comment"># 真实地址</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="docker-rmi-删除镜像"><a href="#docker-rmi-删除镜像" class="headerlink" title="docker rmi 删除镜像"></a>docker rmi 删除镜像</h4><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">[root@localhost ~]# docker rmi redis # 删除指定容器
 docker rmi 容器名 容器名 容器名 # 删除多个容器
 docker rmi $(docker images -aq) # 删除全部容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="docker-commit-提交镜像"><a href="#docker-commit-提交镜像" class="headerlink" title="docker commit 提交镜像"></a>docker commit 提交镜像</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker commit 提交容器成为一个新的副本
-docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; 容器名称 目标镜像名:[tag]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+docker commit -m<span class="token operator">=</span><span class="token string">'提交描述的信息'</span> -a<span class="token operator">=</span><span class="token string">'作者'</span> 容器名称 目标镜像名:<span class="token punctuation">[</span>tag<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
                 
@@ -580,7 +580,7 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sdmkjz.github.io/2021/07/26/docker-jing-xiang-ming-ling/">https://sdmkjz.github.io/2021/07/26/docker-jing-xiang-ming-ling/</a>
+                    <a href="https://blog.sdmkjz.cn/2021/07/26/docker-jing-xiang-ming-ling/">https://blog.sdmkjz.cn/2021/07/26/docker-jing-xiang-ming-ling/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1117,7 +1117,7 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">2.1k</span>
+                        class="white-color">2k</span>
             
             
             
