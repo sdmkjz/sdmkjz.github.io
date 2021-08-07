@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Docker网络命令</title>
+      <link href="/2021/08/07/docker-wang-luo-ming-ling/"/>
+      <url>/2021/08/07/docker-wang-luo-ming-ling/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Docker网络命令"><a href="#Docker网络命令" class="headerlink" title="Docker网络命令"></a>Docker网络命令</h2><h4 id="查看所有网络"><a href="#查看所有网络" class="headerlink" title="查看所有网络"></a>查看所有网络</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# docker network lsNETWORK ID     NAME      DRIVER    SCOPE9473c27d1ebf   bridge    bridge    local9bf6a1c58d75   host      host      local3d82c6fa27f1   mynet     bridge    local2c6941aebcf7   none      null      local37eab5868c16   redis     bridge    local<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="网络模式"><a href="#网络模式" class="headerlink" title="网络模式"></a>网络模式</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">bridge:桥接 docker默认none:不配置网络host:和宿主机共享网络container：容器网络连通(不常用)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h4 id="创建自定义网络"><a href="#创建自定义网络" class="headerlink" title="创建自定义网络"></a>创建自定义网络</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker network create --driver bridge --subnet 192.168.0.0&#x2F;16 --gateway192.168.0.1 mynet--driver 网络模式--subnet 地址&#x2F;掩码--gataway 网关自定义网络可以实现容器之间互相ping容器名可ping通&#96;&#96;&#96;&#96;#### 网络连通&#96;&#96;&#96;shelldocker network connect mynet tomcat01跨网络连接<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="实战-redis集群部署"><a href="#实战-redis集群部署" class="headerlink" title="实战:redis集群部署"></a>实战:redis集群部署</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">for port in $(seq 1 6); \do \mkdir -p &#x2F;root&#x2F;mydata&#x2F;redis&#x2F;node-$&#123;port&#125;&#x2F;conftouch &#x2F;root&#x2F;mydata&#x2F;redis&#x2F;node-$&#123;port&#125;&#x2F;conf&#x2F;redis.confcat &lt;&lt; EOF &gt;&#x2F;root&#x2F;mydata&#x2F;redis&#x2F;node-$&#123;port&#125;&#x2F;conf&#x2F;redis.confport 6379bind 0.0.0.0cluster-enabled yescluster-config-file nodes.confcluster-node-timeout 5000cluster-announce-ip 172.38.0.1$&#123;port&#125;cluster-announce-port 6379cluster-announce-bus-port 16379appendonly yesEOFdone<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>创建redis容器</strong></p><pre><code class="shell"># 生成6个redis容器脚本for port in $(seq 1 6);dodocker run -p 637$&#123;port&#125;:6379 -p 1637$&#123;port&#125;:16379 --name redis-$&#123;port&#125; \-v /root/mydata/redis/node-$&#123;port&#125;/data:/data \-v /root/mydata/redis/node-$&#123;port&#125;/conf/redis.conf:/etc/redis/redis.conf \-d --net redis --ip 172.38.0.1$&#123;port&#125; redis:5.0.9-alpine3.11 redis-server /etc/redis/redis.confdone</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于Docker容器的HEXO博客</title>
       <link href="/2021/07/26/ji-yu-docker-rong-qi-de-hexo-bo-ke/"/>
       <url>/2021/07/26/ji-yu-docker-rong-qi-de-hexo-bo-ke/</url>
