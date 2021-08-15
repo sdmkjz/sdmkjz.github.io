@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Docker镜像命令, MkJz&#39;s blog">
+    <meta name="keywords" content="记一次排查Docker容器网络问题, MkJz&#39;s blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Docker镜像命令 | MkJz&#39;s blog</title>
+    <title>记一次排查Docker容器网络问题 | MkJz&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Docker镜像命令</h1>
+                    <h1 class="description center-align post-title">记一次排查Docker容器网络问题</h1>
                 </div>
             </div>
         </div>
@@ -447,28 +447,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-26
+                    2021-08-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-26
+                    2021-08-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    506
+                    214
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -491,69 +491,26 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Docker镜像命令"><a href="#Docker镜像命令" class="headerlink" title="Docker镜像命令"></a>Docker镜像命令</h1><h3 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker version  # 显示docker的版本信息
-docker info    # 显示docker的系统信息 包括容器和镜像数量
-docker 命令 --help # 帮助命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+                <h3 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h3><p>使用Openwrt安装docker 发现容器内无法访问外部网络 通过ping测试 容器内可访问局域网IP 通过ping域名测试 dns能够正常解析地址 但无法ping通ip地址 后经排查防火墙 发现问题</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><ol>
+<li><p>首先附上Docker版本信息</p>
+<p><img src="image-20210815121031494.png" alt="Docker版本"></p>
+</li>
+<li><p><img src="image-20210815120037115.png" alt="配置文件"></p>
+</li>
+</ol>
+<pre class="line-numbers language-shel" data-language="shel"><code class="language-shel">使用vi修改 &#x2F;etc&#x2F;init.d&#x2F;dockerd 启动脚本，标红处启动参数设置成 --iptables&#x3D;true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><h4 id="docker-images-查看所有镜像"><a href="#docker-images-查看所有镜像" class="headerlink" title="docker images 查看所有镜像"></a>docker images 查看所有镜像</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# docker images
-REPOSITORY    TAG                IMAGE ID       CREATED         SIZE
-mkjz&#x2F;centos   latest             ad89ab41f5d7   40 hours ago    304MB
-tomcat        latest             921ef208ab56   2 days ago      668MB
-mysql         latest             95db2e2bd882   4 days ago      514MB
-sbwml&#x2F;alist   latest             ae685d913f61   13 days ago     28.9MB
-redis         5.0.9-alpine3.11   3661c84ee9d0   15 months ago   29.8MB
-REPOSITORY 仓库源
-TAG 版本信息
-IMAGE ID 镜像ID
-CREATED 镜像创建时间
-SIZE 镜像大小
+<ol start="3">
+<li></li>
+</ol>
+<pre class="line-numbers language-she" data-language="she"><code class="language-she">执行命令  &#x2F;etc&#x2F;init.d&#x2F;dockerd restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-# 可选项
-Options:
-  -a, --all             Show all images (default hides intermediate images)
-      --digests         Show digests
-  -f, --filter filter   Filter output based on conditions provided
-      --format string   Pretty-print images using a Go template
-      --no-trunc        Don&#39;t truncate output
-  -q, --quiet           Only show image IDs 只显示镜像ID<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="docker-search-搜索镜像"><a href="#docker-search-搜索镜像" class="headerlink" title="docker search 搜索镜像"></a>docker search 搜索镜像</h4><pre class="line-numbers language-she" data-language="she"><code class="language-she">[root@localhost ~]# docker search mysql
-NAME                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
-mysql                             MySQL is a widely used, open-source relation…   11158     [OK]       
-mariadb                           MariaDB Server is a high performing open sou…   4235      [OK]       
-mysql&#x2F;mysql-server                Optimized MySQL Server Docker images. Create…   830                  [OK]
-percona                           Percona Server is a fork of the MySQL relati…   548       [OK]       
-phpmyadmin                        phpMyAdmin - A web interface for MySQL and M…   277       [OK]       
-centos&#x2F;mysql-57-centos7           MySQL 5.7 SQL database server                   90                   
-
-# 可选项
-Options:
-  -f, --filter filter   Filter output based on conditions provided
-      --format string   Pretty-print search using a Go template
-      --limit int       Max number of search results (default 25)
-      --no-trunc        Don&#39;t truncate output
---filter&#x3D;STARS&#x3D;3000 # 搜索出来的STARS是大于3000的<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="docker-pull-下载镜像"><a href="#docker-pull-下载镜像" class="headerlink" title="docker pull 下载镜像"></a>docker pull 下载镜像</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# docker pull redis
-Using default tag: latest # 如果不写Tag 默认为最新版本
-latest: Pulling from library&#x2F;redis # 分层下载，docker联合文件系统
-33847f680f63: Pull complete 
-26a746039521: Pull complete 
-18d87da94363: Pull complete 
-5e118a708802: Pull complete 
-ecf0dbe7c357: Pull complete 
-46f280ba52da: Pull complete 
-Digest: sha256:cd0c68c5479f2db4b9e2c5fbfdb7a8acb77625322dd5b474578515422d3ddb59
-Status: Downloaded newer image for redis:latest
-docker.io&#x2F;library&#x2F;redis:latest # 真实地址<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="docker-rmi-删除镜像"><a href="#docker-rmi-删除镜像" class="headerlink" title="docker rmi 删除镜像"></a>docker rmi 删除镜像</h4><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">[root@localhost ~]# docker rmi redis # 删除指定容器
-docker rmi 容器名 容器名 容器名 # 删除多个容器
-docker rmi $(docker images -aq) # 删除全部容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="docker-commit-提交镜像"><a href="#docker-commit-提交镜像" class="headerlink" title="docker commit 提交镜像"></a>docker commit 提交镜像</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker commit 提交容器成为一个新的副本
-docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; 容器名称 目标镜像名:[tag]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
+<p>重启后发现容器内网络正常</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>dockerd 启动时需要 iptables 为 true 的参数，docker daemon 会自动为防火墙添加上相关规则</li>
+<li>如需开放wan口访问容器权限，建议通过防火墙做端口转发来完成，通过修改/etc/config/dockerd中的wan_mode模式存在一定被攻击风险</li>
+</ol>
 
                 
             </div>
@@ -580,7 +537,7 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.sdmkjz.cn/2021/07/26/docker-jing-xiang-ming-ling/">https://blog.sdmkjz.cn/2021/07/26/docker-jing-xiang-ming-ling/</a>
+                    <a href="https://blog.sdmkjz.cn/2021/08/15/ji-yi-ci-pai-cha-docker-rong-qi-wang-luo-wen-ti/">https://blog.sdmkjz.cn/2021/08/15/ji-yi-ci-pai-cha-docker-rong-qi-wang-luo-wen-ti/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -791,17 +748,18 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/07/26/ji-yu-docker-rong-qi-de-hexo-bo-ke/">
+                <a href="/2021/08/15/ji-yi-ci-pai-cha-docker-rong-qi-wang-luo-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="基于Docker容器的HEXO博客">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="记一次排查Docker容器网络问题">
                         
-                        <span class="card-title">基于Docker容器的HEXO博客</span>
+                        <span class="card-title">记一次排查Docker容器网络问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -811,9 +769,9 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -822,15 +780,12 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/Docker/">
                         <span class="chip bg-color">Docker</span>
-                    </a>
-                    
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -844,13 +799,13 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/25/docker-rong-qi-chang-yong-ming-ling/">
+                <a href="/2021/08/07/docker-wang-luo-ming-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Docker容器常用命令">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Docker网络命令">
                         
-                        <span class="card-title">Docker容器常用命令</span>
+                        <span class="card-title">Docker网络命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -861,7 +816,7 @@ docker commit -m&#x3D;&#39;提交描述的信息&#39; -a&#x3D;&#39;作者&#39; �
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-07
                             </span>
                         <span class="publish-author">
                             
