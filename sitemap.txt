@@ -1,3 +1,4 @@
+https://blog.sdmkjz.cn/2022/08/15/zai-m1-mac-huan-jing-xia-shi-yong-python-lian-jie-oracle-shu-ju-ku/
 https://blog.sdmkjz.cn/2021/08/15/ji-yi-ci-pai-cha-docker-rong-qi-wang-luo-wen-ti/
 https://blog.sdmkjz.cn/2021/08/07/docker-wang-luo-ming-ling/
 https://blog.sdmkjz.cn/2021/07/26/ji-yu-docker-rong-qi-de-hexo-bo-ke/
@@ -11,4 +12,6 @@ https://blog.sdmkjz.cn/tags/index.html
 https://blog.sdmkjz.cn/categories/index.html
 https://blog.sdmkjz.cn/
 https://blog.sdmkjz.cn/tags/Docker/
+https://blog.sdmkjz.cn/tags/Python/
+https://blog.sdmkjz.cn/tags/Oracle/
 https://blog.sdmkjz.cn/tags/Hexo/
